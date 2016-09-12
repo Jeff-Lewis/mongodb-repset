@@ -1,0 +1,25 @@
+mongodb-master:
+ image: mongodb-replica-set
+ net: mongo-net
+ environment:
+  ROLE: master
+  SLAVE1: slave1
+  SLAVE2: slave2
+  SLAVE3: arbiter
+ hostname: mongodb
+ container_name: mongodb
+mongodb-slave1:
+ image: mongodb-replica-set
+ net: mongo-net
+ hostname: slave1
+ container_name: slave1
+mongodb-slave2:
+ image: mongodb-replica-set
+ net: mongo-net
+ hostname: slave2
+ container_name: slave2
+mongodb-arbiter:
+ image: mongodb-replica-set
+ net: mongo-net
+ hostname: arbiter
+ container_name: arbiter
