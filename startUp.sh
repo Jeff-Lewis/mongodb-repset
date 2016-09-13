@@ -26,7 +26,9 @@ $MONGO --eval "rs.add(\"${SLAVE1}:27017\")"
 checkSlaveStatus $SLAVE2
 $MONGO --eval "rs.add(\"${SLAVE2}:27017\")"
 checkSlaveStatus $SLAVE3
-$MONGO --eval "rs.addArb(\"${SLAVE3}:27017\")"
+$MONGO --eval "rs.add(\"${SLAVE3}:27017\")"
+checkSlaveStatus $SLAVE4
+$MONGO --eval "rs.addArb(\"${SLAVE4}:27017\")"
 $MONGO /root/priorities.js
 fi
 tailf /dev/null
